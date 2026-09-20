@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Analytics · Enterprise Search Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"></head>
+<body data-page="analytics"><header class="nav" id="nav"></header>
+<main id="app"><div class="wrap">
+    <h2 class="pt">Analytics</h2>
+    <p class="muted">Live benchmarks from the Java backend for your most recent search.</p>
+
+    <div class="card" id="empty" hidden style="margin:20px 0 60px">Run a search to view live benchmark analytics. <a href="index.html" style="color:var(--accent)">Go to search</a></div>
+    <div class="card" id="err" hidden style="margin-top:20px;border-color:#c0392b"></div>
+
+    <div id="live" hidden>
+        <div class="summary" style="margin-top:16px"><span id="summary"></span><button id="rerun" type="button">Re-run benchmark</button></div>
+        <div class="stats" id="stats"></div>
+        <div class="grid2" style="padding-top:0">
+            <div class="card"><h3>Average execution time</h3><div id="bars"></div></div>
+            <div class="card"><h3>Speed relative to slowest</h3><div id="lines"></div></div>
+        </div>
+        <div class="card" style="margin-bottom:60px;overflow-x:auto"><table id="table"></table></div>
+    </div>
+</div></main>
+<footer>Enterprise Search Engine · B.Tech DSA Project</footer>
+<script src="js/mockData.js"></script><script src="js/api.js"></script><script src="js/app.js"></script><script src="js/analytics.js"></script>
+</body></html>
