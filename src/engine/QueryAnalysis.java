@@ -10,6 +10,7 @@ public class QueryAnalysis {
     public static final String KMP          = "KMP";
     public static final String AHO_CORASICK = "AHO_CORASICK";
     public static final String EDIT_DISTANCE = "EDIT_DISTANCE";
+    public static final String SUFFIX_ARRAY = "SUFFIX_ARRAY";
 
     private final String queryType;
     private final String selectedAlgorithm;
@@ -43,6 +44,7 @@ public class QueryAnalysis {
     public String getAlgorithmDisplayName() {
         if (AHO_CORASICK.equals(selectedAlgorithm)) return "Aho-Corasick";
         if (EDIT_DISTANCE.equals(selectedAlgorithm)) return "Edit Distance + KMP";
+        if (SUFFIX_ARRAY.equals(selectedAlgorithm)) return "Suffix Array";
         return "KMP";
     }
 }

@@ -26,8 +26,33 @@ function renderDocuments() {
     $("#app").innerHTML = `<div class="wrap"><h2 class="pt">Documents</h2><p class="muted">${DOCS.length} indexed documents (mock data).</p><div class="card" style="margin:20px 0 60px;overflow-x:auto"><table><tr><th>Title</th><th>Type</th><th>Category</th><th>Pages</th><th>Date</th></tr>${DOCS.map(d => `<tr><td><a href="document.html?id=${d.id}" style="color:var(--accent)">${d.title}</a></td><td><span class="tag">${d.type}</span></td><td>${d.category}</td><td>${d.pages}</td><td>${d.date}</td></tr>`).join("")}</table></div></div>`;
 }
 function renderAbout() {
-    $("#app").innerHTML = `<div class="wrap" style="max-width:720px"><h2 class="pt">About</h2><div class="card" style="margin:20px 0 60px"><p>Enterprise Search Engine is a B.Tech Data Structures and Algorithms project. The Java backend implements the string-search algorithms; this interface presents results, algorithm choices and benchmarks.</p><p class="muted">The frontend currently runs on mock data from <code>mockData.js</code>. Connecting the backend means editing <code>api.js</code> only.</p></div></div>`;
+    $("#app").innerHTML = `<div class="wrap" style="max-width:720px">
+        <h2 class="pt">About</h2>
+        <div class="card" style="margin:20px 0 60px">
+            <p>
+                Adaptive Enterprise Search Engine is a Java-based search system
+                developed as a B.Tech Data Structures and Algorithms project.
+                It dynamically selects suitable searching techniques based on
+                the user's query and supports single-pattern and multi-pattern
+                searching using Naive Search, KMP, Rabin-Karp, Z Algorithm,
+                Aho-Corasick, and Suffix Array.
+            </p>
+            <p>
+                The system also includes spell correction, ranked results,
+                algorithm benchmarking, and performance analytics. The goal is
+                to demonstrate how different data structures and string-matching
+                algorithms can work together to create an adaptive document
+                retrieval system.
+            </p>
+            <p class="muted">
+                The search engine is powered by a Java backend and uses the
+                CISI information-retrieval dataset containing 1,460 indexed
+                documents.
+            </p>
+        </div>
+    </div>`;
 }
+
 mountShell();
 const pg = document.body.dataset.page;
 if (!document.body.dataset.view) ({algorithms: renderAlgorithms, documents: renderDocuments, about: renderAbout}[pg] || (() => {}))();
